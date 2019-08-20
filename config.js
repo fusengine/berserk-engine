@@ -8,4 +8,9 @@ module.exports = {
 		method: 'PUT, POST, GET, DELETE, OPTIONS',
 		credentials: true,
 	},
+
+	/**
+	 * @param {Boolean} urlencoded by default false
+	 */
+	urlEncoded: true,
 }
