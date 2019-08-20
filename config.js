@@ -40,4 +40,20 @@ module.exports = {
 		dir: '',
 		name: '',
 	},
+
+	/** Mongo db */
+	mongoConfig: {
+		server: 'mongodb',
+		user: '',
+		password: '',
+		host: 'localhost',
+		port: '207',
+		dbname: 'wow',
+		options: 'retryWrites=true',
+		newUrlParser: true,
+		useCreateIndex: true,
+		useFindAndModify: false,
+		tryReconnectMongo: 5,
+		intervalReconnectMongo: 500,
+	},
 }
