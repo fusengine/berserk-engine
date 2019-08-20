@@ -1,6 +1,6 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.0.16",
+	"version": "1.0.17",
 	"description": "Berserk engine run start application",
 	"main": "index.js",
 	"scripts": {
@@ -9,6 +9,10 @@
 	},
 	"publishConfig": {
 		"access": "public"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/fusengine/berserk-engine"
 	},
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
