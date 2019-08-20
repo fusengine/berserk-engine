@@ -13,4 +13,11 @@ module.exports = {
 	 * @param {Boolean} urlencoded by default false
 	 */
 	urlEncoded: true,
+
+	/**
+	 * @param {String} morganOption
+	 * option: dev, tiny, combined
+	 * other option go to https://github.com/expressjs/morgan#readme
+	 */
+	morganOption: '',
 }

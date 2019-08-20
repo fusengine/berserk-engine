@@ -1,6 +1,6 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.0.3",
+	"version": "1.0.5",
 	"description": "Berserk engine run start application",
 	"main": "index.js",
 	"scripts": {
@@ -14,12 +14,11 @@
 	"license": "MIT",
 	"dependencies": {
 		"colors": "^1.3.3",
+		"concurrently": "^4.1.2",
 		"express": "^4.17.1",
 		"express-validator": "^6.1.1",
-		"log-symbols": "^3.0.0"
-	},
-	"devDependencies": {
-		"concurrently": "^4.1.2",
+		"log-symbols": "^3.0.0",
+		"morgan": "^1.9.1",
 		"nodemon": "^1.19.1"
 	}
 }
