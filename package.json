@@ -1,6 +1,6 @@
 {
-	"name": "berserk-engine",
-	"version": "1.0.0",
+	"name": "@fusengine/berserk-engine",
+	"version": "1.0.1",
 	"description": "Berserk engine run start application",
 	"main": "index.js",
 	"scripts": {

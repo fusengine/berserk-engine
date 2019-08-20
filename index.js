@@ -9,5 +9,5 @@
 // const pathBerserk = path.resolve(__dirname, 'config.js')
 
 module.exports = {
-	berserkEngine: require('./lib')(),
+	engine: require('./lib'),
 }
