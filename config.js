@@ -24,4 +24,10 @@ module.exports = {
 	 * other option go to https://github.com/expressjs/morgan#readme
 	 */
 	morganOption: '',
+
+	/**
+	 * View
+	 * @param {String} viewExtension extension file ejs or pug
+	 */
+	viewExtension: 'ejs',
 }

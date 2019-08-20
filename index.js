@@ -5,9 +5,7 @@
  * MIT Licensed
  */
 
-const path = require('path')
-const pathBerserk = path.resolve(__dirname, 'config.js')
-
 module.exports = {
-	engine: require('./lib')(pathBerserk),
+	engine: require('./lib'),
+	berserkPath: require('./lib/params/utils').Path,
 }
