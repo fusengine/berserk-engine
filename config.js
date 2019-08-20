@@ -30,4 +30,14 @@ module.exports = {
 	 * @param {String} viewExtension extension file ejs or pug
 	 */
 	viewExtension: 'ejs',
+
+	/**
+	 * assets
+	 * @param {String} dir create your directory to put you js, css and image
+	 * @param {String} name create name to use in your ejs and pug file
+	 */
+	assets: {
+		dir: '',
+		name: '',
+	},
 }
