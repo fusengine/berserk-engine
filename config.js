@@ -1,4 +1,8 @@
 module.exports = {
+	/**
+	 * Define port to listen app 
+	 * @param {String|number} port define your custom port
+	 */
 	port: '',
 
 	/** Define Header Request */
