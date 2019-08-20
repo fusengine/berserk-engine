@@ -5,9 +5,9 @@
  * MIT Licensed
  */
 
-// const path = require('path')
-// const pathBerserk = path.resolve(__dirname, 'config.js')
+const path = require('path')
+const pathBerserk = path.resolve(__dirname, 'config.js')
 
 module.exports = {
-	engine: require('./lib'),
+	engine: require('./lib')(pathBerserk),
 }
