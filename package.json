@@ -1,6 +1,6 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.1.7",
+	"version": "1.1.8",
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
 	"description": "Berserk engine run start application",
@@ -16,7 +16,13 @@
 		"type": "git",
 		"url": "https://github.com/fusengine/berserk-engine"
 	},
-	"files": ["LICENCE", "README.md", "index.js", "config.js", "lib/"],
+	"files": [
+		"LICENCE",
+		"README.md",
+		"index.js",
+		"config.js",
+		"lib/"
+	],
 	"engines": {
 		"node": ">= 8.9.0"
 	},
@@ -35,5 +41,16 @@
 		"nodemon": "^1.19.2",
 		"pug": "^2.0.4"
 	},
-	"keywords": ["rest", "restful", "router", "app", "api", "web", "route", "routing", "pug", "ejs"]
+	"keywords": [
+		"rest",
+		"restful",
+		"router",
+		"app",
+		"api",
+		"web",
+		"route",
+		"routing",
+		"pug",
+		"ejs"
+	]
 }
