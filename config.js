@@ -51,6 +51,7 @@ module.exports = {
 		dbname: 'wow',
 		options: 'retryWrites=true',
 		newUrlParser: true,
+		useUnifiedTopology: true,
 		useCreateIndex: true,
 		useFindAndModify: false,
 		tryReconnectMongo: 5,

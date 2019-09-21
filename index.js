@@ -9,6 +9,6 @@ const path = require('path')
 const pathBerserk = path.resolve(__dirname, 'config.js')
 
 module.exports = {
-	engine: require('./lib'),
+	engine: require('./lib')(pathBerserk),
 	berserkPath: require('./lib/params/utils').Path,
 }
