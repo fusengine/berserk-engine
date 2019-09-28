@@ -6,7 +6,7 @@
  */
 
 const path = require('path')
-const pathBerserk = path.resolve(__dirname, 'config.js')
+const configTest = path.resolve(__dirname, 'config.js')
 
 module.exports = {
 	engine: require('./lib'),
