@@ -1,13 +1,14 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.2.7",
+	"version": "1.2.8",
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
 	"description": "Berserk engine run start application",
 	"main": "index.js",
 	"scripts": {
 		"berserk": "nodemon index.js",
-		"dev": "NODE_ENV=development concurrently \"yarn run berserk\""
+		"dev": "NODE_ENV=development concurrently \"yarn run berserk\"",
+		"prod": "NODE_ENV=production concurrently \"yarn run berserk\""
 	},
 	"publishConfig": {
 		"access": "public",
