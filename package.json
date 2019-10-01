@@ -37,9 +37,9 @@
 		"express-validator": "^6.2.0",
 		"http-errors": "^1.7.3",
 		"log-symbols": "^3.0.0",
-		"mongoose": "^5.7.1",
+		"mongoose": "^5.7.3",
 		"morgan": "^1.9.1",
-		"nodemon": "^1.19.2",
+		"nodemon": "^1.19.3",
 		"pug": "^2.0.4"
 	},
 	"keywords": [
