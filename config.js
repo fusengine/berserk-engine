@@ -41,7 +41,7 @@ module.exports = {
 		name: '',
 	},
 
-	cookieParserOption: {
+	cookieParserSecretKey: {
 		secret: 'berserk-app',
 		option: '',
 	},
