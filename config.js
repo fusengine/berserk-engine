@@ -41,6 +41,11 @@ module.exports = {
 		name: '',
 	},
 
+	cookieParserOption: {
+		secret: 'berserk-app',
+		option: '',
+	},
+
 	/** Mongo db */
 	mongoConfig: {
 		server: 'mongodb',
