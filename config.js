@@ -41,10 +41,7 @@ module.exports = {
 		name: '',
 	},
 
-	cookieParserSecretKey: {
-		secret: 'berserk-app',
-		option: '',
-	},
+	cookieParserSecretKey: 'berserk-app',
 
 	/** Mongo db */
 	mongoConfig: {
@@ -61,5 +58,18 @@ module.exports = {
 		useFindAndModify: false,
 		tryReconnectMongo: 5,
 		intervalReconnectMongo: 500,
+	},
+
+	/** Session Option */
+	sessionOption: {
+		secret: 'berserk-Key-Secret',
+		resave: false,
+		saveUninitialized: true,
+		cookie: {
+			path: '/',
+			httpOnly: true,
+			secure: true,
+			maxAge: 60000,
+		},
 	},
 }
