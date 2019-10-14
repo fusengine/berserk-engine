@@ -10,6 +10,6 @@ const configTest = path.resolve(__dirname, 'config.js')
 
 console.log(process.env.NODE_ENV)
 module.exports = {
-	engine: require('./lib'),
+	engine: require('./lib')(configTest),
 	berserkPath: require('./lib/params/utils').Path,
 }
