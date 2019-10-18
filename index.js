@@ -6,13 +6,17 @@
  */
 
 const path = require('path')
-const configTest = path.resolve(__dirname, 'config.js')
+const { app } = require('./lib/express/app')
 
-console.log(process.env.NODE_ENV)
-
-module.exports = require('./lib')
-
+/** Test */
+// const configTest = path.resolve(__dirname, 'config.js')
 // (configTest, '', '', '', '', [
 // 	require('./lib/params/utils'),
 // 	require('./config'),
 // ])
+
+console.log(process.env.NODE_ENV)
+
+exports.app = app
+
+module.exports = require('./lib')
