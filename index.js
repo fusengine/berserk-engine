@@ -10,7 +10,9 @@ const configTest = path.resolve(__dirname, 'config.js')
 
 console.log(process.env.NODE_ENV)
 
-module.exports = require('./lib')(configTest, '', '', '', '', [
-	require('./lib/params/utils'),
-	require('./config'),
-])
+module.exports = require('./lib')
+
+// (configTest, '', '', '', '', [
+// 	require('./lib/params/utils'),
+// 	require('./config'),
+// ])
