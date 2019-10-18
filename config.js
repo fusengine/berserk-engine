@@ -3,7 +3,7 @@ module.exports = {
 	 * Define port to listen app 
 	 * @param {String|number} port define your custom port
 	 */
-	port: '5001',
+	portNumber: '5001',
 
 	/** Define Header Request */
 	header: {
@@ -16,7 +16,7 @@ module.exports = {
 	/**
 	 * @param {Boolean} urlencoded by default false
 	 */
-	urlEncoded: true,
+	encoded: true,
 
 	/**
 	 * @param {String} morganOption
