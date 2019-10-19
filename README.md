@@ -5,15 +5,24 @@ Berserk-engine use [express](https://github.com/expressjs/express) to create sim
 ## engine()
 To use berserk-engine use **`engine()`** which will contain the functions to read the configuration files, routes and your module array customize for your own application.
 
-### Exemple
+## Exemple
+
 ```js
-const berserkEngine = require('@fusengine/berserk-engine')
-// or 
 const {engine} = require('@fusengine/berserk-engine')
 
+/** exemple */
 engine(
-    // my option
+    require(myConfig),
+    require('Api'),
+    require('Web'),
+    [
+        require('./myConfig'),
+        require('./myModule'),
+        require('./myModule')
+    ]
 )
+
+engine(configFile, apiFile, webFile, [array require('')] )
 ```
 
 ---
@@ -37,29 +46,6 @@ const {
 infoMessage(myVar or 'my message')
 successMessage(myVar or 'my message')
 errorMessage(myVar or 'my message')
-```
----
-## Exemple
-
-```js
-const {engine} = require('@fusengine/berserk-engine')
-
-const myConfig = require('./myConfig')
-const myModule1 = require('./myModule')
-const myModule2 = require('./myModule')
-
-/** exemple */
-engine(
-    myConfig,
-    'Api',
-    'Web',
-    [
-        myModule1,
-        myModule2
-    ]
-)
-
-engine(configFile, apiFile, webFile, [array require('')] )
 ```
 
 If you want use [berserk framework](https://github.com/fusengine/berserk).
