@@ -12,7 +12,7 @@
 	},
 	"publishConfig": {
 		"access": "public",
-		"registry": "https://npm.pkg.github.com/"
+		"url": "https://github.com/fusengine/berserk-engine"
 	},
 	"repository": {
 		"type": "git",
