@@ -9,4 +9,4 @@ const { successMessage } = require('./lib/utils')
 /** Message */
 successMessage('Berserk: engine Loaded. \n')
 
-module.exports = require('./lib/berserk').engine(require('./config'))
+module.exports = require('./lib/berserk')
