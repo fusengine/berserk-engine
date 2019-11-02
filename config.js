@@ -16,14 +16,14 @@ module.exports = {
 	/**
 	 * @param {Boolean} urlencoded by default false
 	 */
-	encoded: true,
+	encoded: '',
 
 	/**
 	 * @param {String} morganOption
 	 * option: dev, tiny, combined
 	 * other option go to https://github.com/expressjs/morgan#readme
 	 */
-	morganOption: '',
+	morgan: '',
 
 	/**
 	 * View
@@ -44,13 +44,13 @@ module.exports = {
 	cookieParserSecretKey: 'berserk-app',
 
 	/** Mongo db */
-	mongoConfig: {
+	mongodb: {
 		server: 'mongodb',
 		user: '',
 		password: '',
 		host: 'localhost',
 		port: '207',
-		dbname: 'wow',
+		dbname: 'test',
 		options: 'retryWrites=true',
 		newUrlParser: true,
 		useUnifiedTopology: true,

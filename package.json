@@ -8,7 +8,8 @@
 	"scripts": {
 		"berserk": "nodemon index.js",
 		"dev": "NODE_ENV=development concurrently \"yarn run berserk\"",
-		"prod": "NODE_ENV=production concurrently \"yarn run berserk\""
+		"prod": "NODE_ENV=production concurrently \"yarn run berserk\"",
+		"test": "NODE_ENV=test concurrently \"yarn run berserk \""
 	},
 	"publishConfig": {
 		"access": "public",
@@ -29,6 +30,7 @@
 		"node": ">= 8.9.0"
 	},
 	"dependencies": {
+		"bcrypt": "^3.0.6",
 		"colors": "^1.4.0",
 		"concurrently": "^5.0.0",
 		"ejs": "^2.7.1",
