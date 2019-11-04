@@ -1,6 +1,6 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.6.6",
+	"version": "1.6.7",
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
 	"description": "Berserk engine run start application",
@@ -30,7 +30,7 @@
 		"node": ">= 8.9.0"
 	},
 	"dependencies": {
-		"bcryptjs": "^3.0.6",
+		"bcryptjs": "^2.4.3",
 		"colors": "^1.4.0",
 		"concurrently": "^5.0.0",
 		"ejs": "^2.7.1",
