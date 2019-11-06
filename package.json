@@ -30,7 +30,7 @@
 		"node": ">= 8.9.0"
 	},
 	"dependencies": {
-		"bcryptjs": "^2.4.3",
+		"bcrypt": "^3.0.6",
 		"colors": "^1.4.0",
 		"concurrently": "^5.0.0",
 		"ejs": "^2.7.1",
@@ -40,7 +40,7 @@
 		"express-validator": "^6.2.0",
 		"http-errors": "^1.7.3",
 		"log-symbols": "^3.0.0",
-		"mongoose": "^5.7.7",
+		"mongoose": "^5.7.8",
 		"morgan": "^1.9.1",
 		"nodemon": "^1.19.4",
 		"pug": "^2.0.4"
