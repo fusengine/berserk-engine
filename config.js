@@ -50,14 +50,15 @@ module.exports = {
 		password: '',
 		host: 'localhost',
 		port: '207',
-		dbname: 'test',
+		dbname: 'test-db',
 		options: 'retryWrites=true',
 		newUrlParser: true,
 		useUnifiedTopology: true,
 		useCreateIndex: true,
 		useFindAndModify: false,
-		tryReconnectMongo: 5,
-		intervalReconnectMongo: 500,
+		useUnifiedTopologyMongo: true,
+		// tryReconnectMongo: 3,
+		// intervalReconnectMongo: 500,
 	},
 
 	/** Session Option */

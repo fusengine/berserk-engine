@@ -1,6 +1,6 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.7.1",
+	"version": "1.7.2",
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
 	"description": "Berserk engine run start application",
@@ -30,19 +30,19 @@
 		"node": ">= 8.9.0"
 	},
 	"dependencies": {
-		"bcrypt": "^3.0.6",
+		"bcrypt": "^3.0.7",
 		"colors": "^1.4.0",
 		"concurrently": "^5.0.0",
-		"ejs": "^2.7.1",
+		"ejs": "^3.0.1",
 		"ejs-mate": "^3.0.0",
 		"errorhandler": "^1.5.1",
 		"express": "^4.17.1",
-		"express-validator": "^6.2.0",
+		"express-validator": "^6.3.0",
 		"http-errors": "^1.7.3",
 		"log-symbols": "^3.0.0",
-		"mongoose": "^5.7.9",
+		"mongoose": "^5.7.13",
 		"morgan": "^1.9.1",
-		"nodemon": "^1.19.4",
+		"nodemon": "^2.0.1",
 		"pug": "^2.0.4"
 	},
 	"keywords": [
