@@ -1,6 +1,6 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.7.8",
+	"version": "1.7.9",
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
 	"description": "Berserk engine run start application",
@@ -39,7 +39,7 @@
 		"express": "^4.17.1",
 		"http-errors": "^1.7.3",
 		"log-symbols": "^3.0.0",
-		"mongoose": "^5.8.5",
+		"mongoose": "^5.8.9",
 		"morgan": "^1.9.1",
 		"nodemon": "^2.0.2",
 		"pug": "^2.0.4"
