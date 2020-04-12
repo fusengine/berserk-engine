@@ -1,6 +1,6 @@
 {
 	"name": "@fusengine/berserk-engine",
-	"version": "1.8.2",
+	"version": "1.8.3",
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
 	"description": "Berserk engine run start application",
@@ -28,6 +28,9 @@
 	],
 	"engines": {
 		"node": ">= 8.9.0"
+	},
+	"resolutions": {
+		"acorn": "^7.1.1"
 	},
 	"dependencies": {
 		"bcrypt": "^4.0.1",
