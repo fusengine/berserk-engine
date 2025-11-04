@@ -1,4 +1,5 @@
 import { DatabaseConfig } from './lib/database/types';
+import { BetterAuthConfig, RBACConfig } from './lib/auth/types';
 
 export interface HeaderConfig {
 	origine: string;
@@ -58,6 +59,10 @@ export interface BerserkConfig {
 	/** New unified database configuration supporting PostgreSQL, MySQL, and MongoDB */
 	database?: DatabaseConfig;
 	sessionOption?: SessionConfig;
+	/** Authentication configuration with Better Auth */
+	auth?: BetterAuthConfig;
+	/** Role-Based Access Control (RBAC) configuration with CASL */
+	rbac?: RBACConfig;
 }
 
 const config: BerserkConfig = {

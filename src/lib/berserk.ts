@@ -1,8 +1,11 @@
 import express, { Application, Request, Response, NextFunction, Router } from 'express';
+import cookieParser from 'cookie-parser';
+import { PrismaClient } from '@prisma/client';
 import * as Utils from './utils';
 import { BerserkConfig } from '../config';
 import MongoDb from './database/mongodb';
 import { DatabaseFactory, DatabaseAdapter } from './database';
+import { AuthService } from './auth';
 import Encoded from './express/Urlencode';
 import Headers from './express/Header';
 import Morgan from './express/Morgan';
@@ -17,12 +20,23 @@ export const berserkUtils = Utils;
 /** Database instance (accessible globally) */
 let databaseInstance: DatabaseAdapter | null = null;
 
+/** Auth service instance (accessible globally) */
+let authServiceInstance: AuthService | null = null;
+
 /**
  * Get the database instance
  * @returns DatabaseAdapter instance or null if not connected
  */
 export const getDatabase = (): DatabaseAdapter | null => {
 	return databaseInstance;
+};
+
+/**
+ * Get the auth service instance
+ * @returns AuthService instance or null if not initialized
+ */
+export const getAuthService = (): AuthService | null => {
+	return authServiceInstance;
 };
 
 /** Message */
@@ -54,7 +68,12 @@ export const engine = async (
 		Utils.successMessage('Berserk default: default config loaded.');
 
 		/** Attribute variable to config files. */
-		const { encoded, header, mongodb, database, morgan, portNumber } = config;
+		const { encoded, header, mongodb, database, auth, rbac, morgan, portNumber, cookieParserSecretKey } = config;
+
+		/** Setup cookie parser for auth tokens */
+		if (auth?.enabled || cookieParserSecretKey) {
+			app.use(cookieParser(cookieParserSecretKey || 'berserk-secret'));
+		}
 
 		/** connect to database (new unified system) */
 		if (database) {
@@ -82,6 +101,30 @@ export const engine = async (
 				mongodb.useFindAndModify,
 				mongodb.useUnifiedTopologyMongo
 			);
+		}
+
+		/** Initialize authentication */
+		if (auth?.enabled && databaseInstance) {
+			try {
+				const prismaClient = databaseInstance.getClient() as PrismaClient;
+				if (prismaClient) {
+					authServiceInstance = new AuthService(prismaClient, auth);
+					Utils.successMessage('Berserk Auth: Authentication system initialized');
+
+					// Setup session cleanup interval (every hour)
+					setInterval(() => {
+						authServiceInstance?.cleanupExpiredSessions();
+					}, 60 * 60 * 1000);
+				}
+			} catch (error) {
+				const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+				Utils.errorMessage(`Auth initialization failed: ${errorMessage}`);
+			}
+		}
+
+		/** Initialize RBAC */
+		if (rbac?.enabled) {
+			Utils.successMessage('Berserk RBAC: Role-Based Access Control enabled');
 		}
 
 		/** Include modules */
