@@ -1,0 +1,5 @@
+# Ignore actual schema.prisma (user-specific)
+schema.prisma
+
+# Keep example schemas
+!schema.example.*.prisma

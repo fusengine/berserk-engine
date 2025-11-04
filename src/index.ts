@@ -7,7 +7,7 @@
 import * as Utils from './lib/utils';
 import config from './config';
 import clear from 'clear';
-import { engine, app, berserkUtils } from './lib/berserk';
+import { engine, app, berserkUtils, getDatabase } from './lib/berserk';
 
 /** Clear terminal */
 clear();
@@ -18,8 +18,12 @@ Utils.successMessage(`Berserk: engine loaded mode ${Utils.ENV()} \n `);
 if (Utils.ENV() === 'test') {
 	module.exports = engine(config);
 } else {
-	module.exports = { engine, app, berserkUtils };
+	module.exports = { engine, app, berserkUtils, getDatabase };
 }
 
-export { engine, app, berserkUtils };
-export default { engine, app, berserkUtils };
+export { engine, app, berserkUtils, getDatabase };
+export default { engine, app, berserkUtils, getDatabase };
+
+// Export database types and utilities for users
+export * from './lib/database/types';
+export { DatabaseFactory } from './lib/database';

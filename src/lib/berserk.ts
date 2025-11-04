@@ -2,6 +2,7 @@ import express, { Application, Request, Response, NextFunction, Router } from 'e
 import * as Utils from './utils';
 import { BerserkConfig } from '../config';
 import MongoDb from './database/mongodb';
+import { DatabaseFactory, DatabaseAdapter } from './database';
 import Encoded from './express/Urlencode';
 import Headers from './express/Header';
 import Morgan from './express/Morgan';
@@ -12,6 +13,17 @@ import Errors from './express/error';
 /** Default export */
 export const app: Application = express();
 export const berserkUtils = Utils;
+
+/** Database instance (accessible globally) */
+let databaseInstance: DatabaseAdapter | null = null;
+
+/**
+ * Get the database instance
+ * @returns DatabaseAdapter instance or null if not connected
+ */
+export const getDatabase = (): DatabaseAdapter | null => {
+	return databaseInstance;
+};
 
 /** Message */
 const confMessage = 'Config file not found please create your file config and put this path.';
@@ -24,12 +36,12 @@ const poweredBy = 'Berserk, Fusengine';
  * @param {Router} api route files to api.
  * @param {Router} http route files to http.
  */
-export const engine = (
+export const engine = async (
 	config?: BerserkConfig,
 	modules?: any,
 	api?: Router,
 	http?: Router
-): void => {
+): Promise<void> => {
 	/** Define name application */
 	app.use((_req: Request, res: Response, next: NextFunction) => {
 		res.header('X-powered-by', poweredBy);
@@ -42,10 +54,20 @@ export const engine = (
 		Utils.successMessage('Berserk default: default config loaded.');
 
 		/** Attribute variable to config files. */
-		const { encoded, header, mongodb, morgan, portNumber } = config;
+		const { encoded, header, mongodb, database, morgan, portNumber } = config;
 
-		/** connect to mongodb */
-		if (mongodb) {
+		/** connect to database (new unified system) */
+		if (database) {
+			try {
+				databaseInstance = await DatabaseFactory.createAndConnect(database);
+			} catch (error) {
+				const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+				Utils.errorMessage(`Database connection failed: ${errorMessage}`);
+			}
+		}
+		/** connect to mongodb (legacy support) */
+		else if (mongodb) {
+			Utils.infoMessage('Using legacy MongoDB configuration. Consider migrating to the new "database" config.');
 			MongoDb(
 				mongodb.server,
 				mongodb.user,

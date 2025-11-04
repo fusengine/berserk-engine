@@ -1,3 +1,5 @@
+import { DatabaseConfig } from './lib/database/types';
+
 export interface HeaderConfig {
 	origine: string;
 	headers: string;
@@ -10,6 +12,10 @@ export interface AssetsConfig {
 	name: string;
 }
 
+/**
+ * @deprecated Use DatabaseConfig with type: 'mongodb' instead
+ * This interface is kept for backwards compatibility
+ */
 export interface MongoDBConfig {
 	server: string;
 	user?: string;
@@ -47,7 +53,10 @@ export interface BerserkConfig {
 	viewExtension?: string;
 	assets?: AssetsConfig;
 	cookieParserSecretKey?: string;
+	/** @deprecated Use 'database' instead for better multi-database support */
 	mongodb?: MongoDBConfig;
+	/** New unified database configuration supporting PostgreSQL, MySQL, and MongoDB */
+	database?: DatabaseConfig;
 	sessionOption?: SessionConfig;
 }
 
